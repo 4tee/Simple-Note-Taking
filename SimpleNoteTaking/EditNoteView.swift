@@ -13,17 +13,28 @@ struct EditNoteView: View {
     @Environment(\.presentationMode) var presentationMode
     
     @ObservedObject var note: Note
+    @State var noteTitle: String = ""
+    @State var noteBody: String  = ""
     
     var body: some View {
         
         Form {
             Section {
-                TextField("Title", text: $note.title)
-                TextEditor(text: $note.body).frame(height: 100)
+                VStack (alignment: .leading){
+                    TextField("Title", text: $noteTitle)
+                    if (noteTitle.isEmpty) {
+                        Text("Title cannot be empty")
+                        .foregroundColor(.red)
+                        .font(.footnote)
+                    }
+                }
+                TextEditor(text: $noteBody).frame(height: 100)
             }
             
             Button("Save") {
                 do {
+                    note.title = noteTitle
+                    note.body = noteBody
                     note.lastUpdated = Date()
                     
                     try self.moc.save()
@@ -31,16 +42,13 @@ struct EditNoteView: View {
                 } catch {
                     print("Oops. something went wrong while saving")
                 }
-            }
-        }.navigationTitle("Edit note")
+            }.disabled(noteTitle.isEmpty)
+        }.navigationBarTitle("Edit note", displayMode: .inline)
     }
 }
 
 struct EditNoteView_Previews: PreviewProvider {
-    
-    static var mNote = Note()
-    
     static var previews: some View {
-        EditNoteView(note: mNote)
+        EditNoteView(note: Note(), noteTitle: "Sample Title", noteBody: "Sample Body")
     }
 }

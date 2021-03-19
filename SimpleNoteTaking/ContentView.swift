@@ -23,7 +23,7 @@ struct ContentView: View {
                 ForEach(notes, id: \.title) { note in
                     
                     NavigationLink(
-                        destination: EditNoteView(note: note).environment(\.managedObjectContext, self.moc),
+                        destination: EditNoteView(note: note, noteTitle: note.title, noteBody: note.body).environment(\.managedObjectContext, self.moc),
                         label: {
                             Text(note.title)
                         }
