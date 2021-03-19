@@ -19,6 +19,8 @@
 		5E37C0B72604398800334549 /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E37C0B52604398800334549 /* Note+CoreDataProperties.swift */; };
 		5E37C0BC26043C5400334549 /* AddNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E37C0BB26043C5400334549 /* AddNoteView.swift */; };
 		5E37C0C1260441E600334549 /* EditNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E37C0C0260441E600334549 /* EditNoteView.swift */; };
+		5E37C0C926044EA500334549 /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E37C0C826044EA500334549 /* NoteViewModel.swift */; };
+		5E37C0CE2604577F00334549 /* NoteViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E37C0CD2604577F00334549 /* NoteViewModelSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		5E37C0B52604398800334549 /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5E37C0BB26043C5400334549 /* AddNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteView.swift; sourceTree = "<group>"; };
 		5E37C0C0260441E600334549 /* EditNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteView.swift; sourceTree = "<group>"; };
+		5E37C0C826044EA500334549 /* NoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModel.swift; sourceTree = "<group>"; };
+		5E37C0CD2604577F00334549 /* NoteViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModelSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,7 @@
 				5E37C081260435D100334549 /* SimpleNoteTakingApp.swift */,
 				5E37C083260435D100334549 /* ContentView.swift */,
 				5E37C0BB26043C5400334549 /* AddNoteView.swift */,
+				5E37C0C826044EA500334549 /* NoteViewModel.swift */,
 				5E37C0C0260441E600334549 /* EditNoteView.swift */,
 				5E37C085260435D200334549 /* Assets.xcassets */,
 				5E37C08A260435D200334549 /* Persistence.swift */,
@@ -135,6 +140,7 @@
 			children = (
 				5E37C098260435D200334549 /* SimpleNoteTakingTests.swift */,
 				5E37C09A260435D200334549 /* Info.plist */,
+				5E37C0CD2604577F00334549 /* NoteViewModelSpec.swift */,
 			);
 			path = SimpleNoteTakingTests;
 			sourceTree = "<group>";
@@ -279,6 +285,7 @@
 			files = (
 				5E37C08B260435D200334549 /* Persistence.swift in Sources */,
 				5E37C084260435D100334549 /* ContentView.swift in Sources */,
+				5E37C0C926044EA500334549 /* NoteViewModel.swift in Sources */,
 				5E37C0B62604398800334549 /* Note+CoreDataClass.swift in Sources */,
 				5E37C082260435D100334549 /* SimpleNoteTakingApp.swift in Sources */,
 				5E37C0C1260441E600334549 /* EditNoteView.swift in Sources */,
@@ -293,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E37C099260435D200334549 /* SimpleNoteTakingTests.swift in Sources */,
+				5E37C0CE2604577F00334549 /* NoteViewModelSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

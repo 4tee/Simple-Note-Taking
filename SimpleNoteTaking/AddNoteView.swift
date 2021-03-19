@@ -11,31 +11,46 @@ struct AddNoteView: View {
     @Environment(\.managedObjectContext) var moc
     @Environment(\.presentationMode) var presentationMode
     
-    @State private var noteTitle = ""
-    @State private var noteBody = ""
+    @StateObject var viewModel = NoteViewModel()
+    @State private var shouldShowError = false
     
     var body: some View {
         NavigationView {
             
             Form {
                 Section {
-                    TextField("Title", text: $noteTitle)
-                    TextEditor(text: $noteBody).frame(height: 100)
+                    VStack (alignment: .leading){
+                        TextField("Title", text: $viewModel.noteTitle)
+                        if (shouldShowError && !viewModel.isGoodToSave()) {
+                            Text("Title cannot be empty")
+                            .foregroundColor(.red)
+                            .font(.footnote)
+                        }
+                        
+                    }
+                    TextEditor(text: $viewModel.noteBody).frame(height: 100)
                 }
                 
                 Button("Add") {
-                    let newNote = Note(context: self.moc)
-                    newNote.title = self.noteTitle
-                    newNote.body = self.noteBody
-                    newNote.lastUpdated = Date()
+                    self.shouldShowError.toggle()
                     
-                    do {
-                        try self.moc.save()
-                        self.presentationMode.wrappedValue.dismiss()
-                    } catch {
-                        print("Oops. something went wrong while saving")
+                    if (viewModel.isGoodToSave()) {
+                        let newNote = Note(context: self.moc)
+                        newNote.title = viewModel.noteTitle
+                        newNote.body = viewModel.noteBody
+                        newNote.lastUpdated = viewModel.lastUpdated
+                        
+                        do {
+                            try self.moc.save()
+                            self.presentationMode.wrappedValue.dismiss()
+                        } catch {
+                            print("Oops. something went wrong while saving")
+                        }
+                    } else {
+                        print("Note title cannot be empty")
                     }
                 }
+                
             }.navigationTitle("New note")
             
         }
