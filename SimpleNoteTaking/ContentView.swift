@@ -16,6 +16,8 @@ struct HardCodedNote {
 
 struct ContentView: View {
     
+    @State private var showingAddJoke = false
+    
     let notes = [
         HardCodedNote(title: "First Note", body: "First Note Body", lastUpdated: Date()),
         HardCodedNote(title: "Second Note", body: "Second Note Body", lastUpdated: Date()),
@@ -24,11 +26,20 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
+            
             List {
                 ForEach(notes, id: \.title) { note in
                     Text(note.title)
                 }
             }.navigationTitle("Notes")
+            .navigationBarItems(trailing: Button(action: {self.showingAddJoke.toggle()}, label: {
+                Image(systemName: "plus.circle").imageScale(.large)
+                Text("Add")
+            }))
+            .sheet(isPresented: $showingAddJoke, content: {
+                Text("New Note")
+            })
+            
         }
     }
 }
