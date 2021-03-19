@@ -17,6 +17,7 @@
 		5E37C0A4260435D200334549 /* SimpleNoteTakingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E37C0A3260435D200334549 /* SimpleNoteTakingUITests.swift */; };
 		5E37C0B62604398800334549 /* Note+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E37C0B42604398800334549 /* Note+CoreDataClass.swift */; };
 		5E37C0B72604398800334549 /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E37C0B52604398800334549 /* Note+CoreDataProperties.swift */; };
+		5E37C0BC26043C5400334549 /* AddNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E37C0BB26043C5400334549 /* AddNoteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		5E37C0A5260435D200334549 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E37C0B42604398800334549 /* Note+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataClass.swift"; sourceTree = "<group>"; };
 		5E37C0B52604398800334549 /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		5E37C0BB26043C5400334549 /* AddNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				5E37C0B52604398800334549 /* Note+CoreDataProperties.swift */,
 				5E37C081260435D100334549 /* SimpleNoteTakingApp.swift */,
 				5E37C083260435D100334549 /* ContentView.swift */,
+				5E37C0BB26043C5400334549 /* AddNoteView.swift */,
 				5E37C085260435D200334549 /* Assets.xcassets */,
 				5E37C08A260435D200334549 /* Persistence.swift */,
 				5E37C08F260435D200334549 /* Info.plist */,
@@ -276,6 +279,7 @@
 				5E37C0B62604398800334549 /* Note+CoreDataClass.swift in Sources */,
 				5E37C082260435D100334549 /* SimpleNoteTakingApp.swift in Sources */,
 				5E37C08E260435D200334549 /* SimpleNoteTaking.xcdatamodeld in Sources */,
+				5E37C0BC26043C5400334549 /* AddNoteView.swift in Sources */,
 				5E37C0B72604398800334549 /* Note+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,21 +8,12 @@
 import SwiftUI
 import CoreData
 
-struct HardCodedNote {
-    var title: String
-    var body: String
-    var lastUpdated: Date
-}
-
 struct ContentView: View {
     
-    @State private var showingAddJoke = false
+    @Environment(\.managedObjectContext) var moc
+    @FetchRequest(entity: Note.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Note.lastUpdated, ascending: true)]) var notes: FetchedResults<Note>
     
-    let notes = [
-        HardCodedNote(title: "First Note", body: "First Note Body", lastUpdated: Date()),
-        HardCodedNote(title: "Second Note", body: "Second Note Body", lastUpdated: Date()),
-        HardCodedNote(title: "Third Note", body: "Third Note Body", lastUpdated: Date())
-    ]
+    @State private var showAddNote = false
     
     var body: some View {
         NavigationView {
@@ -32,12 +23,12 @@ struct ContentView: View {
                     Text(note.title)
                 }
             }.navigationTitle("Notes")
-            .navigationBarItems(trailing: Button(action: {self.showingAddJoke.toggle()}, label: {
+            .navigationBarItems(trailing: Button(action: {self.showAddNote.toggle()}, label: {
                 Image(systemName: "plus.circle").imageScale(.large)
                 Text("Add")
             }))
-            .sheet(isPresented: $showingAddJoke, content: {
-                Text("New Note")
+            .sheet(isPresented: $showAddNote, content: {
+                AddNoteView().environment(\.managedObjectContext, self.moc)
             })
             
         }
