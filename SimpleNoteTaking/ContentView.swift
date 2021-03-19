@@ -8,9 +8,28 @@
 import SwiftUI
 import CoreData
 
+struct Note {
+    var title: String
+    var body: String
+    var lastUpdated: Date
+}
+
 struct ContentView: View {
+    
+    let notes = [
+        Note(title: "First Note", body: "First Note Body", lastUpdated: Date()),
+        Note(title: "Second Note", body: "Second Note Body", lastUpdated: Date()),
+        Note(title: "Third Note", body: "Third Note Body", lastUpdated: Date())
+    ]
+    
     var body: some View {
-        Text("Hello World")
+        NavigationView {
+            List {
+                ForEach(notes, id: \.title) { note in
+                    Text(note.title)
+                }
+            }.navigationTitle("Notes")
+        }
     }
 }
 
