@@ -8,7 +8,7 @@
 import SwiftUI
 import CoreData
 
-struct Note {
+struct HardCodedNote {
     var title: String
     var body: String
     var lastUpdated: Date
@@ -17,9 +17,9 @@ struct Note {
 struct ContentView: View {
     
     let notes = [
-        Note(title: "First Note", body: "First Note Body", lastUpdated: Date()),
-        Note(title: "Second Note", body: "Second Note Body", lastUpdated: Date()),
-        Note(title: "Third Note", body: "Third Note Body", lastUpdated: Date())
+        HardCodedNote(title: "First Note", body: "First Note Body", lastUpdated: Date()),
+        HardCodedNote(title: "Second Note", body: "Second Note Body", lastUpdated: Date()),
+        HardCodedNote(title: "Third Note", body: "Third Note Body", lastUpdated: Date())
     ]
     
     var body: some View {

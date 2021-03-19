@@ -15,6 +15,8 @@
 		5E37C08E260435D200334549 /* SimpleNoteTaking.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5E37C08C260435D200334549 /* SimpleNoteTaking.xcdatamodeld */; };
 		5E37C099260435D200334549 /* SimpleNoteTakingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E37C098260435D200334549 /* SimpleNoteTakingTests.swift */; };
 		5E37C0A4260435D200334549 /* SimpleNoteTakingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E37C0A3260435D200334549 /* SimpleNoteTakingUITests.swift */; };
+		5E37C0B62604398800334549 /* Note+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E37C0B42604398800334549 /* Note+CoreDataClass.swift */; };
+		5E37C0B72604398800334549 /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E37C0B52604398800334549 /* Note+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		5E37C09F260435D200334549 /* SimpleNoteTakingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleNoteTakingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E37C0A3260435D200334549 /* SimpleNoteTakingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleNoteTakingUITests.swift; sourceTree = "<group>"; };
 		5E37C0A5260435D200334549 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E37C0B42604398800334549 /* Note+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataClass.swift"; sourceTree = "<group>"; };
+		5E37C0B52604398800334549 /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 		5E37C080260435D100334549 /* SimpleNoteTaking */ = {
 			isa = PBXGroup;
 			children = (
+				5E37C0B42604398800334549 /* Note+CoreDataClass.swift */,
+				5E37C0B52604398800334549 /* Note+CoreDataProperties.swift */,
 				5E37C081260435D100334549 /* SimpleNoteTakingApp.swift */,
 				5E37C083260435D100334549 /* ContentView.swift */,
 				5E37C085260435D200334549 /* Assets.xcassets */,
@@ -267,8 +273,10 @@
 			files = (
 				5E37C08B260435D200334549 /* Persistence.swift in Sources */,
 				5E37C084260435D100334549 /* ContentView.swift in Sources */,
+				5E37C0B62604398800334549 /* Note+CoreDataClass.swift in Sources */,
 				5E37C082260435D100334549 /* SimpleNoteTakingApp.swift in Sources */,
 				5E37C08E260435D200334549 /* SimpleNoteTaking.xcdatamodeld in Sources */,
+				5E37C0B72604398800334549 /* Note+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
