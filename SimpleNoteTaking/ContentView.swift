@@ -11,7 +11,7 @@ import CoreData
 struct ContentView: View {
     
     @Environment(\.managedObjectContext) var moc
-    @FetchRequest(entity: Note.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Note.lastUpdated, ascending: true)]) var notes: FetchedResults<Note>
+    @FetchRequest(entity: Note.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Note.lastUpdated, ascending: false)]) var notes: FetchedResults<Note>
     
     @State private var showAddNote = false
     
@@ -21,7 +21,14 @@ struct ContentView: View {
             List {
                 
                 ForEach(notes, id: \.title) { note in
-                    Text(note.title)
+                    
+                    NavigationLink(
+                        destination: EditNoteView(note: note).environment(\.managedObjectContext, self.moc),
+                        label: {
+                            Text(note.title)
+                        }
+                    )
+                    
                 }
                 .onDelete(perform: removeNote)
                 
