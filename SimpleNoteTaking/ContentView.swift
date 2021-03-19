@@ -19,9 +19,12 @@ struct ContentView: View {
         NavigationView {
             
             List {
+                
                 ForEach(notes, id: \.title) { note in
                     Text(note.title)
                 }
+                .onDelete(perform: removeNote)
+                
             }.navigationTitle("Notes")
             .navigationBarItems(trailing: Button(action: {self.showAddNote.toggle()}, label: {
                 Image(systemName: "plus.circle").imageScale(.large)
@@ -32,6 +35,15 @@ struct ContentView: View {
             })
             
         }
+    }
+    
+    func removeNote(at offset: IndexSet) {
+        for index in offset {
+            let noteToBeRemoved = notes[index]
+            moc.delete(noteToBeRemoved)
+        }
+        
+        try? moc.save()
     }
 }
 
